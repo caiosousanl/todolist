@@ -1,4 +1,5 @@
 import { IPomodoro } from "../page";
+import { TaskList } from "./taskList";
 
 interface PomodoroProps {
   pomodoro: IPomodoro;
@@ -9,7 +10,7 @@ interface PomodoroProps {
 
 export const Pomodoro = ({ pomodoro, addTask, playPause }: PomodoroProps) => {
   return (
-    <div key={pomodoro.id} className="mt-2 mb-2 border-emerald-500 border-4">
+    <div key={pomodoro.id} className="mt-2 mb-2 border-zinc-500 border-4">
       <div className="flex flex-row ">
         <div className="basis-2/3">Pomodoro {pomodoro.contador}</div>
         <div>{pomodoro.duracao}</div>
@@ -53,15 +54,7 @@ export const Pomodoro = ({ pomodoro, addTask, playPause }: PomodoroProps) => {
           </svg>
         </button>{" "}
       </div>
-      {pomodoro.tasks &&
-        pomodoro.tasks.map((task) => (
-          <div key={task.id} className="border-emerald-500 border-4">
-            <div className="flex justify-between">
-              <div>task description</div>
-              <div>checkbox shadcn</div>
-            </div>
-          </div>
-        ))}
+      <TaskList tasks={pomodoro.tasks} />
     </div>
   );
 };

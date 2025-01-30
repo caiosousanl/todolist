@@ -11,7 +11,7 @@ export interface IPomodoro {
   tasks: ITask[];
 }
 
-interface ITask {
+export interface ITask {
   id: number;
   descricao: string;
   concluido: boolean;
@@ -36,9 +36,8 @@ const TodoList = () => {
       concluido: false,
       tasks: [],
     };
-    const pomodoroListNew = [...pomodoroList, newPomodoro];
-    setPomodoroList(pomodoroListNew);
-    console.log(pomodoroListNew);
+    setPomodoroList([...pomodoroList, newPomodoro]);
+    console.log(pomodoroList);
   };
 
   const playPause = (pomodoroId: number) => () => {
