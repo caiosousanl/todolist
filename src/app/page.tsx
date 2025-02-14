@@ -5,7 +5,7 @@ import { PomodoroList } from "./components/pomodoroList";
 
 export interface IPomodoro {
   id: number;
-  duracao: number;
+  duracaoMin: number;
   contador: number;
   concluido: boolean;
   tasks: ITask[];
@@ -21,7 +21,7 @@ const TodoList = () => {
   const [pomodoroList, setPomodoroList] = useState<IPomodoro[]>([
     {
       id: Date.now(),
-      duracao: 25,
+      duracaoMin: 25,
       contador: 0,
       concluido: false,
       tasks: [],
@@ -31,17 +31,13 @@ const TodoList = () => {
   const addPomodoro = () => {
     const newPomodoro: IPomodoro = {
       id: Date.now(),
-      duracao: 25,
+      duracaoMin: 25,
       contador: 0,
       concluido: false,
       tasks: [],
     };
     setPomodoroList([...pomodoroList, newPomodoro]);
     console.log(pomodoroList);
-  };
-
-  const playPause = (pomodoroId: number) => () => {
-    console.log(pomodoroId, "todo");
   };
 
   const addTask = (pomodoroId: number) => {
@@ -69,11 +65,7 @@ const TodoList = () => {
         </button>
         <h1 className="text-2xl "></h1>
         <div>
-          <PomodoroList
-            pomodoroList={pomodoroList}
-            addTask={addTask}
-            playPause={playPause}
-          />
+          <PomodoroList pomodoroList={pomodoroList} addTask={addTask} />
         </div>
       </div>
     </div>

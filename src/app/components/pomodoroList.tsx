@@ -4,23 +4,13 @@ import { Pomodoro } from "./pomodoro";
 interface PomodoroListProps {
   pomodoroList: IPomodoro[];
   addTask: (pomodoroId: number) => void;
-  playPause: (pomodoroId: number) => void;
 }
 
-export const PomodoroList = ({
-  pomodoroList,
-  addTask,
-  playPause,
-}: PomodoroListProps) => {
+export const PomodoroList = ({ pomodoroList, addTask }: PomodoroListProps) => {
   return (
     <>
       {pomodoroList.map((pomodoro) => (
-        <Pomodoro
-          pomodoro={pomodoro}
-          key={pomodoro.id}
-          addTask={addTask}
-          playPause={playPause}
-        />
+        <Pomodoro pomodoro={pomodoro} key={pomodoro.id} addTask={addTask} />
       ))}
     </>
   );
