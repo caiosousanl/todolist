@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Button } from "./ui/button";
 
 interface PomodoroTimerProps {
   duracaoMin: number;
@@ -27,15 +28,13 @@ export const PomodoroTimer = (props: PomodoroTimerProps) => {
 
   return (
     <>
-      <div>
-        {Math.floor(time / 60) % 60} : {time % 60}
+      <div className="flex flex-row mr-2 mt-2">
+        <div>{Math.floor(time / 60) % 60}</div>:<div>{time % 60}</div>
       </div>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={!isRunning ? play : pause}
-      >
+
+      <Button onClick={!isRunning ? play : pause}>
         {isRunning ? "Pause" : "Play"}
-      </button>
+      </Button>
     </>
   );
 };

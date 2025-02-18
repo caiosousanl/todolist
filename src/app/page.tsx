@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PomodoroList } from "./components/pomodoroList";
-
+import { Button } from "./components/ui/button";
 export interface IPomodoro {
   id: number;
   duracaoMin: number;
@@ -54,15 +54,12 @@ const TodoList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-600 py-8">
-      <div className="max-w-md mx-auto bg-white rounded-lg shadow p-6 text-gray-800">
-        <h1 className="text-2xl font-bold mb-6 ">Todo Pomodoro List</h1>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={addPomodoro}
-        >
-          Add Pomodoro
-        </button>
+    <div className="min-h-screen bg-black py-8">
+      <div className="max-w-md mx-auto rounded-lg shadow p-6 ">
+        <h1 className="text-2xl font-bold mb-6 text-white ">
+          Todo Pomodoro List
+        </h1>
+        <Button onClick={addPomodoro}>Novo Pomodoro</Button>
         <h1 className="text-2xl "></h1>
         <div>
           <PomodoroList pomodoroList={pomodoroList} addTask={addTask} />

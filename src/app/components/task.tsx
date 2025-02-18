@@ -1,5 +1,6 @@
 import React from "react";
 import { ITask } from "../page";
+import { Checkbox } from "./ui/checkbox";
 
 export interface ITaskProps {
   task: ITask;
@@ -8,10 +9,10 @@ export interface ITaskProps {
 
 export const Task = ({ task }: ITaskProps) => {
   return (
-    <div key={task.id} className="border-indigo-500 border-2">
+    <div key={task.id} className="">
       <div className="flex justify-between">
         <div>task description</div>
-        <div>checkbox shadcn</div>
+        <Checkbox />
       </div>
     </div>
   );
