@@ -54,7 +54,7 @@ const TodoList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-8">
+    <div className="min-h-screen bg-base-100 py-8">
       <div className="max-w-md mx-auto rounded-lg shadow p-6 ">
         <h1 className="text-2xl font-bold mb-6 text-white ">
           Todo Pomodoro List

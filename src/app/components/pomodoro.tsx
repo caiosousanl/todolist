@@ -16,7 +16,9 @@ export const Pomodoro = ({ pomodoro, addTask }: PomodoroProps) => {
         <div className="basis-2/3 mt-2 ml-2">Pomodoro {pomodoro.contador}</div>
         <PomodoroTimer duracaoMin={pomodoro.duracaoMin} />
         <div>...</div> {/* todos: change pomodoro duration,  */}
-        <Button onClick={() => addTask(pomodoro.id)}>Nova Tarefa</Button>
+        <Button size="btn-xs" onClick={() => addTask(pomodoro.id)}>
+          Nova Tarefa
+        </Button>
       </div>
       <TaskList tasks={pomodoro.tasks} />
     </div>

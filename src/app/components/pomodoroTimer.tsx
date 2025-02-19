@@ -32,7 +32,7 @@ export const PomodoroTimer = (props: PomodoroTimerProps) => {
         <div>{Math.floor(time / 60) % 60}</div>:<div>{time % 60}</div>
       </div>
 
-      <Button onClick={!isRunning ? play : pause}>
+      <Button onClick={!isRunning ? play : pause} size="btn-xs">
         {isRunning ? "Pause" : "Play"}
       </Button>
     </>
