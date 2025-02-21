@@ -7,7 +7,7 @@ interface ITaskListProps {
 
 export const TaskList = ({ tasks }: ITaskListProps) => {
   return (
-    <div className="flex flex-col p-2 mt-2">
+    <div className="flex flex-col p-2 bg-neutral rounded">
       {tasks && tasks.map((task) => <Task task={task} key={task.id} />)}
     </div>
   );
