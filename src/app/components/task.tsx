@@ -11,9 +11,9 @@ export interface ITaskProps {
 export const Task = ({ task }: ITaskProps) => {
   return (
     <div key={task.id} className="">
-      <div className="flex justify-between bg-neutral my-1">
-        <Input placeholder="Task description" size="input-xs" />
-        <Checkbox />
+      <div className="flex justify-between bg-neutral items-center">
+        <Input placeholder="Task description" size="input-sm" className="" />
+        <Checkbox checked={task.concluido} />
       </div>
     </div>
   );

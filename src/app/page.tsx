@@ -24,7 +24,7 @@ const TodoList = () => {
       duracaoMin: 25,
       contador: 0,
       concluido: false,
-      tasks: [],
+      tasks: [{ id: Date.now(), descricao: "", concluido: false }],
     },
   ]);
 
@@ -32,12 +32,11 @@ const TodoList = () => {
     const newPomodoro: IPomodoro = {
       id: Date.now(),
       duracaoMin: 25,
-      contador: 0,
+      contador: pomodoroList.length,
       concluido: false,
-      tasks: [],
+      tasks: [{ id: Date.now(), descricao: "", concluido: false }],
     };
     setPomodoroList([...pomodoroList, newPomodoro]);
-    console.log(pomodoroList);
   };
 
   const addTask = (pomodoroId: number) => {
@@ -56,9 +55,7 @@ const TodoList = () => {
   return (
     <div className="min-h-screen bg-base-100 py-8">
       <div className="max-w-md mx-auto rounded-lg shadow p-6 ">
-        <h1 className="text-2xl font-bold mb-6 text-white ">
-          Todo Pomodoro List
-        </h1>
+        <h1 className="text-2xl font-bold mb-6 text-white ">Pomodoro Timer</h1>
         <Button onClick={addPomodoro}>Novo Pomodoro</Button>
         <h1 className="text-2xl "></h1>
         <div>
