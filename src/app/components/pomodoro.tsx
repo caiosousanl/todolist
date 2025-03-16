@@ -11,7 +11,7 @@ interface PomodoroProps {
 
 export const Pomodoro = ({ pomodoro, addTask }: PomodoroProps) => {
   return (
-    <div key={pomodoro.id} className="mt-2 mb-2 rounded-lg p-2">
+    <div key={pomodoro.id} className=" bg-neutral mt-2 mb-2 rounded-lg p-2">
       <div className="flex flex-row ">
         <div className="basis-2/3 mt-2 ml-2">Pomodoro {pomodoro.contador}</div>
         <PomodoroTimer duracaoMin={pomodoro.duracaoMin} />

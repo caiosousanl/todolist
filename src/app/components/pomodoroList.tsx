@@ -8,7 +8,7 @@ interface PomodoroListProps {
 
 export const PomodoroList = ({ pomodoroList, addTask }: PomodoroListProps) => {
   return (
-    <div className="bg-neutral rounded-lg">
+    <div className="">
       {pomodoroList.map((pomodoro) => (
         <Pomodoro pomodoro={pomodoro} key={pomodoro.id} addTask={addTask} />
       ))}
