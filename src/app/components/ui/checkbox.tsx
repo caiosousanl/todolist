@@ -1,13 +1,9 @@
-interface ICheckboxProps {
-  checked: boolean;
-}
-export const Checkbox = ({ checked }: ICheckboxProps) => {
+export const Checkbox = () => {
   return (
     <>
       <input
         type="checkbox"
         className="checkbox checkbox-sm"
-        checked={checked}
       />
     </>
   );

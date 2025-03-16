@@ -13,7 +13,7 @@ export const Task = ({ task }: ITaskProps) => {
     <div key={task.id} className="">
       <div className="flex justify-between bg-neutral items-center">
         <Input placeholder="Task description" size="input-sm" className="" />
-        <Checkbox checked={task.concluido} />
+        <Checkbox />
       </div>
     </div>
   );
